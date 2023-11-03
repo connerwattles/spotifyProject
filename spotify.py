@@ -11,6 +11,8 @@ pmt_uri = 'spotify:show:5ss1pqMFqWjkOpt6Ag0fZW'
 cwatts_uri = 'spotify:user:31mwgetts7mfg6gyqqaboejnrrz4'
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET))
 
+
+##Birdy albums
 results = spotify.artist_albums(birdy_uri, album_type='album')
 albums = results['items']
 while results['next']:
@@ -19,6 +21,8 @@ while results['next']:
 
 for album in albums:
     print(album['name'])
+
+##PMT episodes
 
 '''
 results = spotify.show_episodes(pmt_uri, limit = 50)
@@ -31,6 +35,7 @@ for episode in episodes:
     print(episode['name'])
     '''
 
+##Conner's Playlists
 print("Conner's Playlists:")
 
 restult = spotify.user_playlists()
